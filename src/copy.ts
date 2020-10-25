@@ -64,6 +64,8 @@ export const copy = async (pattern: string, destination: string, options?: IOpti
 
   opts.cwd = path.resolve(opts.cwd)
 
+  console.log(opts)
+
   let files
   try {
     files = await globby(pattern, {cwd: opts.cwd})

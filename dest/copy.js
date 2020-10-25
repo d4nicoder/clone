@@ -50,6 +50,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.copy = void 0;
 var globby_1 = __importDefault(require("globby"));
 var path_1 = __importDefault(require("path"));
 var fs_1 = __importDefault(require("fs"));
@@ -118,13 +119,14 @@ var copyFile = function (source, destination, options) { return __awaiter(void 0
             }); })];
     });
 }); };
-var copy = function (pattern, destination, options) { return __awaiter(void 0, void 0, void 0, function () {
+exports.copy = function (pattern, destination, options) { return __awaiter(void 0, void 0, void 0, function () {
     var opts, files, e_3, copied, i, result, e_4;
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
                 opts = (options) ? __assign(__assign({}, defaultOptions), options) : defaultOptions;
                 opts.cwd = path_1.default.resolve(opts.cwd);
+                console.log(opts);
                 _a.label = 1;
             case 1:
                 _a.trys.push([1, 3, , 4]);
@@ -166,4 +168,3 @@ var copy = function (pattern, destination, options) { return __awaiter(void 0, v
         }
     });
 }); };
-module.exports = copy;
